@@ -1,11 +1,13 @@
 package org.example;
 
+import org.example.second.Physics;
+
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
 public class Main {
     public static void main(String[] args) {
-        //#1
+        //day 1 #1
         int rectangleLength = 5;
         int rectangleWidth = 3;
         System.out.println(
@@ -14,14 +16,14 @@ public class Main {
                         + " is "
                         + findRectangleArea(rectangleLength, rectangleWidth)
         );
-        //#2
+        //day 1 #2
         int circleRadius = 5;
         findDiameterCircumferenceAreaOfCircle(circleRadius);
-        //#3
+        //day 1 #3
         int firstAngle = 80;
         int secondAngle = 65;
         findTheThirdAngleOfTriangle(firstAngle, secondAngle);
-        //#4
+        //day 1 #4
         String firstDate = "2024-03-19";
         String secondDate = "2024-03-21";
 
@@ -31,9 +33,31 @@ public class Main {
         long dateDifference = ChronoUnit.DAYS.between(startDate, endDate);
 
         System.out.println("Difference between date = " + dateDifference);
-        //#5
+        //day 1 #5
         String myName = "Nurul Fadilah";
         writeInitial(myName);
+        //day2 #1
+        Physics physicsFormula = new Physics();
+        float inFahrenheit = 132;
+        physicsFormula.inputFahrenheit(inFahrenheit);
+        float inCelcius = physicsFormula.getCelcius();
+        System.out.println("Celcius = " + inCelcius);
+        //day2 #2
+        physicsFormula.inputCentimeter(1000);
+        float inKilometer = physicsFormula.getKilometer();
+        System.out.println(1000 + "cm = " + inKilometer + " km");
+        //day2 #3
+        int aNumber = 231;
+        boolean isOdd = aNumber % 2 == 1;
+        System.out.println(aNumber + " is Odd = " + isOdd);
+        //day2 #4
+        String stringToSearch = "Hello World";
+        System.out.println(stringToSearch.replaceAll("ell",""));
+        //day2 #5
+        String aString = "madam";
+        StringBuilder reversedString = new StringBuilder(aString).reverse();
+        boolean isPalindrome = aString.equals(reversedString.toString());
+        System.out.println(reversedString + " is " + (isPalindrome ? "Palindrome" : "not Palindrome"));
     }
 
     static int findRectangleArea(
